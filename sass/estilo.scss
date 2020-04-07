@@ -1,0 +1,68 @@
+$fundo: #0E4A65;
+$titulo: #eee;
+$texto:  #666;
+$footer: #082735;
+$sizeTxt: 14px;
+
+@mixin estiloTit{
+    background: $fundo;
+    color:$titulo;
+    text-align: center;
+}
+
+@mixin estiloTxt{
+    font-size:$sizeTxt;
+    color:$texto;
+}
+
+body {
+  padding: 5px;
+ font-family: 'Trebuchet MS', sans-serif;
+}
+
+.container-box {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  
+  grid-gap: 2px;
+  grid-template-columns: auto;
+  grid-template-rows: 120px auto auto auto;
+  grid-template-areas:
+    'header'
+    'section'  
+    'main'
+    'footer'
+  ;
+}
+
+
+
+header {
+  @include estiloTit;
+    grid-area: header;
+}
+
+section img {width: 100%}
+
+#col {
+    column-count: 3;
+    @include estiloTxt;
+    padding: 0 5% 0 2%;
+    margin: 20px 0;
+}
+
+aside {
+  grid-area: aside;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+text-align: center;
+border-top: 5px solid $fundo;
+padding-top: 1%;
+ grid-area: footer;
+}

@@ -12,7 +12,7 @@ livereload({start:true})
 
 gulp.task('connect', function(done){
     connect.server({
-        root: 'build',
+        root: './',
         livereload:true
     });
     done();
